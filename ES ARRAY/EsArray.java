@@ -1,15 +1,13 @@
 import java.io.*;
 
-public class EsArray
-{
+public class EsArray {
 
     public static void main(String args[]) throws NumberFormatException, IOException {
-
-        
-        //somma1();
-        //somma2();
-        //contaMinoriDiZero();
-        //maggiore();
+        // Eseguiamo i metodi uno per uno
+        // somma1();
+        // somma2();
+        // contaMinoriDiZero();
+        // maggiore();
     }
 
     public static void somma1() throws NumberFormatException, IOException {
