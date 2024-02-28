@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class EserciziArray
+public class EsArray
 {
 
     public static void main(String args[]) throws NumberFormatException, IOException {
