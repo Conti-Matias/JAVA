@@ -1,3 +1,5 @@
-testo = document.getElementById("maiuscolo")
+const text = document.getElementById("myInput");
 
-testo.innerHTML = testo.innerHTML.toUpperCase()
+text.addEventListener("input", () => {
+    text.value = text.value.toUpperCase()
+});
