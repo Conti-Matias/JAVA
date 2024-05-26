@@ -1,59 +1,20 @@
-javac stimport java.io.*;
+import java.io.*;
 import java.util.Scanner;
 
-public class stringa {
-    public static void main (String[] args){
-        //a();
-        //b();
-        //c();
+public class Stringhe {
+
+    public static void main(String[] args) {
+
+        // a();
+        // b();
+        // c();
         d();
+
     }
 
-    public static void a(){
-        
-        Scanner scanner = new Scanner(System.in);
-
-    
-        System.out.print("Inserisci una stringa: ");
-        String stringa = scanner.nextLine();
-
-        int lunghezza = stringa.length();
-        System.out.println("lunghezza: " + lunghezza);
-
-        char carattereCentrale = stringa.charAt(lunghezza / 2);
-        System.out.println("carattereCentrale = " + carattereCentrale);
-
-        stringa = stringa.substring(0, 1).toUpperCase() + stringa.substring(1);
-        System.out.println("Stringa con prima lettera maiuscola = " + stringa);
-
-        int na=0;
-        for (int i = 0; i < stringa.length(); i++) {
-            if (stringa.charAt(i) == 'a') {
-                na++;
-            }
-        }
-        System.out.println("Numero di occorrenze di 'a' = " + na);
-
-        String sottoStringa = stringa.substring(0, 4);
-        System.out.println("Stringa dal primo al quarto carattere = " + sottoStringa);
-
-        
-        stringa = stringa.toUpperCase();
-        System.out.println(stringa);
-
-        
-        stringa = stringa.toLowerCase();
-        System.out.println(stringa);
-
-        
-        if (isPalindromo(stringa))
-            System.out.println("La stringa è palindroma");
-        else
-            System.out.println("La stringa non è palindroma");
-
-        scanner.close();
-    }
-
+    /*
+     * Questa funzione restituisce true se la stringa è palindroma, false altrimenti
+     */
     public static boolean isPalindromo(String stringa) {
         for (int i = 0; i < stringa.length() / 2; i++) {
             if (stringa.charAt(i) != stringa.charAt(stringa.length() - 1 - i)) {
@@ -63,7 +24,65 @@ public class stringa {
         return true;
     }
 
-    public static void b(){
+    // esercizio a
+    public static void a() {
+        // crea scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // legge stringa
+        System.out.print("Inserisci una stringa: ");
+        String stringa = scanner.nextLine();
+
+        // elimina spazi davanti e dietro
+        stringa.trim();
+
+        // stampa stringa
+        System.out.println("Stringa inserita: " + stringa);
+
+        // stampa lunghezza stringa
+        int lunghezza = stringa.length();
+        System.out.println("lunghezza = " + lunghezza);
+
+        // stampa carattere centrale
+        char carattereCentrale = stringa.charAt(lunghezza / 2);
+        System.out.println("carattereCentrale = " + carattereCentrale);
+
+        // trasforma il primo carattere in maiuscolo
+        stringa = stringa.substring(0, 1).toUpperCase() + stringa.substring(1);
+        System.out.println("Stringa modificata con prima lettera maiuscola = " + stringa);
+
+        // stampa numero occorrenze di 'a'
+        int nOccorenzeA = 0;
+        for (int i = 0; i < stringa.length(); i++) {
+            if (stringa.charAt(i) == 'a') {
+                nOccorenzeA++;
+            }
+        }
+        System.out.println("Numero di occorrenze di 'a' = " + nOccorenzeA);
+
+        // stampa dal primo al qaurto carattere
+        String sottoStringa = stringa.substring(0, 4);
+        System.out.println("Stringa dal primo al quarto carattere = " + sottoStringa);
+
+        // trasforma la stringa in maiuscolo
+        stringa = stringa.toUpperCase();
+        System.out.println(stringa);
+
+        // trasforma la stringa in minuscolo
+        stringa = stringa.toLowerCase();
+        System.out.println(stringa);
+
+        // controlla se la stringa e palindroma
+        if (isPalindromo(stringa))
+            System.out.println("La stringa è palindroma");
+        else
+            System.out.println("La stringa non è palindroma");
+
+        scanner.close();
+    }
+
+    // esercizio b
+    public static void b() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -127,9 +146,45 @@ public class stringa {
             }
         }
 
-        System.out.println("la parola piu lunga e: " + parole[x]);        
+        System.out.println("la parola piu lunga e: " + parole[x]);
+
+        // legge una stringa e controlla se e una sigla
+        System.out.println("inserisci una stringa: ");
+        stringa = scanner.nextLine();
+        boolean c = true;
+
+        for (int i = 0; i < stringa.length(); i += 2) {
+            if (stringa.charAt(i) != '.') {
+                c = false;
+            }
+        }
+
+        if (c)
+            System.out.println("la stringa e una siglia");
+        else
+            System.out.println("la stringa non e una siglia");
+
+        // legge due stringhe e controlla se sono anagrammi
+        System.out.println("inserisci due parole: ");
+        stringa = scanner.nextLine();
+        stringa2 = scanner.nextLine();
+
+        char[] lettere = stringa.toCharArray();
+        c = true;
+
+        for (int i = 0; i < stringa2.length(); i++)
+            if (stringa2.indexOf(lettere[i]) == -1)
+                c = false;
+
+        if (c)
+            System.out.println("le stringhe sono anagrammi");
+        else
+            System.out.println("le stringhe non sono anagrammi");
+
+        scanner.close();
     }
-    
+
+    // esercizio c
     public static void c() {
         Scanner scanner = new Scanner(System.in);
 
@@ -211,7 +266,8 @@ public class stringa {
 
     }
 
-     public static void d() {
+    // esercizio d
+    public static void d() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci una frase: ");
 
@@ -252,6 +308,4 @@ public class stringa {
         System.out.println("PascalCase: " + stringa2);
 
     }
-
-    
 }
